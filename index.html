@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Faateh ❤️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe4e1, #e0f7fa);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .header {
+      background: #ff8fab;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .header h1 { margin: 0; font-size: 3rem; }
+    .header p { margin: 10px 0 0; font-size: 1.4rem; }
+
+    .hero {
+      text-align: center;
+      margin: 30px 15px;
+    }
+    .hero img {
+      max-width: 95%;
+      border-radius: 25px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    }
+
+    .about {
+      text-align: center;
+      padding: 25px;
+      background: white;
+      margin: 20px 15px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff8fab;
+      margin: 40px 0 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      padding: 20px 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: 0.4s;
+    }
+    .gallery img:hover {
+      transform: scale(1.06);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #ff8fab;
+      color: white;
+      margin-top: 40px;
+      font-size: 1.1rem;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox img {
+      max-width: 92%;
+      max-height: 92%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Muhammad Faateh</h1>
+    <p>9 Months Old Cutie Pie 👶❤️</p>
+  </div>
+
+  <div class="hero">
+    <img src="faateh1.jpg" alt="Muhammad Faateh">
+  </div>
+
+  <div class="about">
+    <h2>Assalam-o-Alaikum! 😍</h2>
+    <p><strong>Naam:</strong> Muhammad Faateh</p>
+    <p><strong>Umar:</strong> 9 Months</p>
+    <p><strong>Papa:</strong> Muhammad Haris</p>
+    <p>Mujhe muskurana, khelna aur nayi cheezon ko dekhna bohot pasand hai! ❤️</p>
+  </div>
+
+  <h2>My Cute Memories 📸</h2>
+  <div class="gallery">
+    <img src="faateh1.jpg" alt="Green T-shirt" onclick="showLightbox('faateh1.jpg')">
+    <img src="faateh2.jpg" alt="Red T-shirt" onclick="showLightbox('faateh2.jpg')">
+    <img src="faateh3.jpg" alt="Cool Cap" onclick="showLightbox('faateh3.jpg')">
+    <img src="faateh4.jpg" alt="Playing with toys" onclick="showLightbox('faateh4.jpg')">
+  </div>
+
+  <div class="footer">
+    <p>Made with ❤️ by Papa - Muhammad Haris</p>
+    <p>For our loving family & friends</p>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function showLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+  </script>
+</body>
+</html>
