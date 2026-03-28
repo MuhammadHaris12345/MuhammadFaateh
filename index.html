@@ -5,74 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Faateh ❤️</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: linear-gradient(135deg, #ffe4e1, #e0f7fa);
-      margin: 0;
-      padding: 0;
       color: #333;
     }
+
+    /* Navbar */
+    .navbar {
+      background: #ff8fab;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      list-style: none;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 10px 18px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: white;
+      color: #ff8fab;
+    }
+
     .header {
       background: #ff8fab;
       color: white;
       text-align: center;
       padding: 40px 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-    .header h1 { margin: 0; font-size: 3rem; }
-    .header p { margin: 10px 0 0; font-size: 1.4rem; }
+    .header h1 { font-size: 2.8rem; margin-bottom: 8px; }
+    .header p { font-size: 1.4rem; }
 
     .hero {
       text-align: center;
-      margin: 30px 15px;
+      margin: 25px 15px;
     }
     .hero img {
       max-width: 95%;
       border-radius: 25px;
-      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    .about {
-      text-align: center;
-      padding: 25px;
-      background: white;
-      margin: 20px 15px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      font-size: 1.1rem;
+    .section {
+      padding: 30px 15px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     h2 {
       text-align: center;
       color: #ff8fab;
-      margin: 40px 0 20px;
+      margin-bottom: 25px;
+      font-size: 2rem;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
-      padding: 20px 15px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
     .gallery img {
       width: 100%;
       border-radius: 18px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: 0.4s;
+      transition: 0.3s;
+      cursor: pointer;
     }
-    .gallery img:hover {
-      transform: scale(1.06);
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* Videos */
+    .video-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 12px 28px;
+      background: #fff;
+      border: 2px solid #ff8fab;
+      color: #ff8fab;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .tab-btn.active {
+      background: #ff8fab;
+      color: white;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .video-container {
+      background: white;
+      padding: 12px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .tiktok-video {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
     }
 
     .footer {
       text-align: center;
-      padding: 35px 20px;
+      padding: 40px 20px;
       background: #ff8fab;
       color: white;
-      margin-top: 40px;
-      font-size: 1.1rem;
+      margin-top: 50px;
     }
 
     .lightbox {
@@ -94,29 +158,82 @@
 </head>
 <body>
 
-  <div class="header">
-    <h1>Muhammad Faateh</h1>
-    <p>9 Months Old Cutie Pie 👶❤️</p>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
+      <li><a href="#" onclick="showSection('videos')">Videos of Faateh</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <div id="home" class="section">
+    <div class="header">
+      <h1>Muhammad Faateh</h1>
+      <p>9 Months Old ❤️ | Our Little Prince</p>
+    </div>
+
+    <div class="hero">
+      <img src="faateh1.jpg" alt="Muhammad Faateh">
+    </div>
+
+    <div class="section" style="text-align:center; font-size:1.1rem;">
+      <h2>Assalam-o-Alaikum! 👶</h2>
+      <p><strong>Naam:</strong> Muhammad Faateh</p>
+      <p><strong>Umar:</strong> 9 Months</p>
+      <p><strong>Papa:</strong> Muhammad Haris</p>
+      <p>Mera beta bohot cute, shaitaan aur pyara hai 😍</p>
+    </div>
   </div>
 
-  <div class="hero">
-    <img src="faateh1.jpg" alt="Muhammad Faateh">
+  <!-- Gallery Section -->
+  <div id="gallery" class="section" style="display:none;">
+    <h2>My Cute Gallery 📸</h2>
+    <div class="gallery">
+      <img src="faateh1.jpg" onclick="showLightbox('faateh1.jpg')" alt="Faateh 1">
+      <img src="faateh2.jpg" onclick="showLightbox('faateh2.jpg')" alt="Faateh 2">
+      <img src="faateh3.jpg" onclick="showLightbox('faateh3.jpg')" alt="Faateh with Cap">
+      <img src="faateh4.jpg" onclick="showLightbox('faateh4.jpg')" alt="Playing">
+      <img src="faateh5.jpg" onclick="showLightbox('faateh5.jpg')" alt="Faateh with Dada Jan">
+      <img src="faateh6.jpg" onclick="showLightbox('faateh6.jpg')" alt="Faateh with Dada Jan">
+      <img src="faateh7.jpg" onclick="showLightbox('faateh7.jpg')" alt="Faateh with Dada Jan">
+      <img src="faateh8.jpg" onclick="showLightbox('faateh8.jpg')" alt="Faateh with Dada Jan">
+      <img src="faateh9.jpg" onclick="showLightbox('faateh9.jpg')" alt="Faateh with Dada Jan">
+
+    </div>
   </div>
 
-  <div class="about">
-    <h2>Assalam-o-Alaikum! 😍</h2>
-    <p><strong>Naam:</strong> Muhammad Faateh</p>
-    <p><strong>Umar:</strong> 9 Months</p>
-    <p><strong>Papa:</strong> Muhammad Haris</p>
-    <p>Mujhe muskurana, khelna aur nayi cheezon ko dekhna bohot pasand hai! ❤️</p>
-  </div>
+  <!-- Videos Section -->
+  <div id="videos" class="section" style="display:none;">
+    <h2>Videos of Faateh 🎥</h2>
 
-  <h2>My Cute Memories 📸</h2>
-  <div class="gallery">
-    <img src="faateh1.jpg" alt="Green T-shirt" onclick="showLightbox('faateh1.jpg')">
-    <img src="faateh2.jpg" alt="Red T-shirt" onclick="showLightbox('faateh2.jpg')">
-    <img src="faateh3.jpg" alt="Cool Cap" onclick="showLightbox('faateh3.jpg')">
-    <img src="faateh4.jpg" alt="Playing with toys" onclick="showLightbox('faateh4.jpg')">
+    <div class="video-tabs">
+      <button class="tab-btn active" onclick="showVideoTab(0)">All Videos</button>
+      <button class="tab-btn" onclick="showVideoTab(1)">Hair Cutting ✂️</button>
+    </div>
+
+    <!-- All Videos -->
+    <div id="all-videos" class="video-grid">
+      <div class="video-container">
+        <video width="100%" controls>
+          <source src="haircut1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- Agar aur normal videos hain to yahan copy-paste kar sakte ho -->
+    </div>
+
+    <!-- Hair Cutting Videos (TikTok Style) -->
+    <div id="hair-videos" class="video-grid" style="display:none;">
+      <div class="video-container">
+        <div class="tiktok-video">
+          <video width="100%" controls style="aspect-ratio: 9/16;">
+            <source src="haircut1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!-- Aur hair cutting videos add kar sakte ho -->
+    </div>
   </div>
 
   <div class="footer">
@@ -130,10 +247,31 @@
   </div>
 
   <script>
+    function showSection(section) {
+      document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(section).style.display = 'block';
+
+      document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+
+    function showVideoTab(tab) {
+      document.getElementById('all-videos').style.display = tab === 0 ? 'grid' : 'none';
+      document.getElementById('hair-videos').style.display = tab === 1 ? 'grid' : 'none';
+
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+
     function showLightbox(src) {
       document.getElementById("lightbox-img").src = src;
       document.getElementById("lightbox").style.display = "flex";
     }
+
+    // Default: Home section dikhao
+    window.onload = () => {
+      document.getElementById('home').style.display = 'block';
+    };
   </script>
 </body>
 </html>
