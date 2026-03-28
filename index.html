@@ -74,19 +74,34 @@
       font-size: 2rem;
     }
 
+    /* Gallery with Captions */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
-    .gallery img {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    .photo-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       transition: 0.3s;
-      cursor: pointer;
     }
-    .gallery img:hover { transform: scale(1.05); }
+    .photo-card:hover {
+      transform: translateY(-8px);
+    }
+    .photo-card img {
+      width: 100%;
+      display: block;
+    }
+    .caption {
+      padding: 14px 12px;
+      text-align: center;
+      font-weight: bold;
+      color: #ff4d94;
+      font-size: 1.05rem;
+      background: #fff0f5;
+    }
 
     /* Videos */
     .video-tabs {
@@ -187,19 +202,55 @@
     </div>
   </div>
 
-  <!-- Gallery Section -->
+  <!-- Gallery Section with Cute Captions -->
   <div id="gallery" class="section" style="display:none;">
     <h2>My Cute Gallery 📸</h2>
     <div class="gallery">
-      <img src="faateh1.jpg" onclick="showLightbox('faateh1.jpg')" alt="Faateh 1">
-      <img src="faateh2.jpg" onclick="showLightbox('faateh2.jpg')" alt="Faateh 2">
-      <img src="faateh3.jpg" onclick="showLightbox('faateh3.jpg')" alt="Faateh with Cap">
-      <img src="faateh4.jpg" onclick="showLightbox('faateh4.jpg')" alt="Playing">
-      <img src="faateh5.jpg" onclick="showLightbox('faateh5.jpg')" alt="Faateh with Dada Jan">
-      <img src="faateh6.jpg" onclick="showLightbox('faateh6.jpg')" alt="Faateh with Dada Jan">
-      <img src="faateh7.jpg" onclick="showLightbox('faateh7.jpg')" alt="Faateh with Dada Jan">
+
+      <div class="photo-card">
+        <img src="faateh1.jpg" onclick="showLightbox('faateh1.jpg')" alt="Faateh">
+        <div class="caption">😍 Faateh ka Sweet Smile</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="faateh2.jpg" onclick="showLightbox('faateh2.jpg')" alt="Faateh">
+        <div class="caption">❤️ Red Mein Handsome Faateh</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="faateh3.jpg" onclick="showLightbox('faateh3.jpg')" alt="Faateh">
+        <div class="caption">😎 Cool Boy with Cap</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="faateh4.jpg" onclick="showLightbox('faateh4.jpg')" alt="Faateh">
+        <div class="caption">🧸 Playing Time with Toys</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="faateh5.jpg" onclick="showLightbox('faateh5.jpg')" alt="Faateh with Dada">
+        <div class="caption">👴 Faateh with Dada Jan ❤️</div>
+      </div>
+       <div class="photo-card">
+        <img src="faateh5.jpg" onclick="showLightbox('faateh5.jpg')" alt="Faateh with Dada">
+        <div class="caption">👴 Faateh with Dada Jan ❤️</div>
+      </div>
+         <div class="photo-card">
+            <img src="faateh7.jpg" onclick="showLightbox('faateh7.jpg')" alt="Faateh with Dada Jan">
+        <div class="caption">👴 Faateh with Dada Jan ❤️</div>
+      </div>
+         <div class="photo-card">
       <img src="faateh8.jpg" onclick="showLightbox('faateh8.jpg')" alt="Faateh with Dada Jan">
-      <img src="faateh9.jpg" onclick="showLightbox('faateh9.jpg')" alt="Faateh with Dada Jan">
+        <div class="caption">👴 Faateh with Dada Jan ❤️</div>
+      </div>
+         <div class="photo-card">
+  <img src="faateh9.jpg" onclick="showLightbox('faateh9.jpg')" alt="Faateh with Dada Jan">
+        <div class="caption">👴 Faateh with Dada Jan ❤️</div>
+      </div>
+
+   
+   
+      
 
     </div>
   </div>
@@ -213,17 +264,14 @@
       <button class="tab-btn" onclick="showVideoTab(1)">Hair Cutting ✂️</button>
     </div>
 
-    <!-- All Videos -->
     <div id="all-videos" class="video-grid">
       <div class="video-container">
         <video width="100%" controls>
-          <source src="haircut1.mp4" type="video/mp4">
+          <source src="video1.mp4" type="video/mp4">
         </video>
       </div>
-      <!-- Agar aur normal videos hain to yahan copy-paste kar sakte ho -->
     </div>
 
-    <!-- Hair Cutting Videos (TikTok Style) -->
     <div id="hair-videos" class="video-grid" style="display:none;">
       <div class="video-container">
         <div class="tiktok-video">
@@ -232,7 +280,6 @@
           </video>
         </div>
       </div>
-      <!-- Aur hair cutting videos add kar sakte ho -->
     </div>
   </div>
 
@@ -268,7 +315,6 @@
       document.getElementById("lightbox").style.display = "flex";
     }
 
-    // Default: Home section dikhao
     window.onload = () => {
       document.getElementById('home').style.display = 'block';
     };
